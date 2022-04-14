@@ -13,14 +13,18 @@
 
 <script>
 import axios from 'axios';
+
 export default {
+  created() { // vue callback 함수 
+    this.getDataFromServer();
+  },
   methods: {
-    getDataFromServer() {
+    async getDataFromServer() {
       axios.get("https:/jsonplaceholder.typicode.com/posts")
         .then((res) => {
           console.log(res.data);
           this.posts = res.data;
-        })
+        });
     }
   },
   data() {  // vue 프레임워크에서 data 안에 객체 형태로 데이터를 지정하면 Line 3~ 처럼 데이터 바인딩이 가능하게끔 해뒀음.
