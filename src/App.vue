@@ -2,7 +2,10 @@
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
   <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
 
-  <product-header></product-header>
+  <product-header>
+    <h3>원리</h3> 
+    <!-- 슬롯 개념 -->
+  </product-header>
   <product-main></product-main>
   <product-footer></product-footer>
 </template>

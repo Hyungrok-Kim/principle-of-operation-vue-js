@@ -14,18 +14,32 @@
 
 <script>
 export default {
-    methods: {  // Vue 프레임워크의 함수 작성 부분 
-      buttonClicked() {
-        console.log('Click');
-        this.title = '버튼 클릭이 되었습니다.';
-      }
+  // 자식 컴포넌트에서 props 받는 방법.
+  props: {
+    // 'textData', // 양방향 데이터는 안 된다. prop으로 못씀
+    isShow: {
+      type: Boolean,
+      required: true,
     },
+    title: {
+      type: String,
+      default() {
+        return 'no title'; // 부모에서 title을 넘겨줄 때 값이 없으면 default로 "no title"이 들어가게끔.
+      }
+
+    },
+  },
+
+  methods: {  // Vue 프레임워크의 함수 작성 부분 
+    buttonClicked() {
+      console.log('Click');
+      // this.title = '버튼 클릭이 되었습니다.';
+    }
+  },
 
     data() {
       return {
-        textData: "Hyungrok",
-        isShow: true,
-        title: '상품 목록',
+        textData:'Hyungrok'
       };
     }
 }
